@@ -25,18 +25,18 @@ main {
 
 .cell {
     border-radius: 4px;
-    transform: scale(0);
-    transition: transform 200ms linear;
+    /* transform: scale(0); */
+    /* transition: transform 200ms linear; */
 }
 
 .active {
-    transform: scale(1);
+    /* transform: scale(1); */
     background-color: #555;
 }
 
 .food {
     background-color: orangered;
-    transform: scale(1);
+    /* transform: scale(1); */
     border-radius: 50%;
 }
 
