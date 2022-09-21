@@ -71,7 +71,7 @@ function updateSnake() {
 }
 
 function isValid([x, y]) {
-    return x >= 0 && y >= 0 && (x < SIZE) & (y < SIZE);
+    return x >= 0 && y >= 0 && x < SIZE && y < SIZE;
 }
 
 function handleGameover() {
