@@ -5,7 +5,6 @@ const SIZE = 20
 let speed = 150
 mainElement.style.setProperty('--size', SIZE)
 let direction = 'right'
-let firstTime = true
 let snake = [[0, 0]]
 let food
 let interval
@@ -92,9 +91,8 @@ generateFood()
 
 function loop() {
 	writeLength()
-	if (!firstTime) updateSnake()
+	updateSnake()
 	drawSnake()
-	firstTime = false
 }
 
 window.addEventListener('keydown', (e) => {
@@ -124,17 +122,18 @@ function handleInput(key) {
 			}
 			break
 		case ' ':
-			restartGame()
+			startGame()
 			break
 	}
 }
 
-function restartGame() {
+function startGame() {
 	direction = 'right'
 	snake = [[0, 0]]
 	clearInterval(interval)
 	statusElement.innerText = ''
-	firstTime = true
+	drawSnake()
+	writeLength()
 	interval = setInterval(loop, speed)
 	generateFood()
 }
@@ -143,4 +142,4 @@ function writeLength() {
 	statusElement.innerText = 'Length: ' + snake.length
 }
 
-interval = setInterval(loop, speed)
+startGame()
